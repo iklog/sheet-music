@@ -8,10 +8,8 @@ U = \tweak Stem.direction #UP \etc
 
 
 \header {
-  title = "Music21 Fragment"
-  composer = "Music21"
-  "id: software" = "music21 v.7.3.3"
-  "id: encoding-date" = "2026-10-21"
+  title = "Wake me up when september ends"
+  composer = "Green Day"
 }
 #(set-global-staff-size 19.916929133858268)
 \paper {
@@ -21,6 +19,43 @@ U = \tweak Stem.direction #UP \etc
     \Score
     autoBeaming = ##f
   }
+}
+
+verse = \lyricmode {
+  Sum -- mer has come and passed
+  The in -- no -- cent can ne -- ver last
+Wake me up when September ends
+Like my fathers come to pass
+Seven years has gone so fast
+Wake me up when September ends
+Here comes the rain again
+Falling from the stars
+Drenched in my pain again
+Becoming who we are
+As my memory rests
+But never forgets what I lost
+Wake me up when September ends
+Summer has come and passed
+The innocent can never last
+Wake me up when September ends
+Ring out the bells again
+Like we did when spring began
+Wake me up when September ends
+Here comes the rain again
+Falling from the stars
+Drenched in my pain again
+Becoming who we are
+As my memory rests
+But never forgets what I lost
+Wake me up when September ends
+Summer has come and passed
+The innocent can never last
+Wake me up when September ends
+Like my father's come to pass
+Twenty years has gone so fast
+Wake me up when September ends
+Wake me up when September ends
+Wake me up when September ends
 }
 PartPOnecfThreeNineFourbThreeFourFouraccSevenFiveThreeZeroNineFiveaFourefThreefFiveSevenbThreeNineaThreeVoiceOne =
 \relative a' {
@@ -1371,33 +1406,35 @@ PartPOnefSevenNineZeroNineNineaThreeFourFourFourThreecThreeSevenNinecSixcSixfTwo
 
 % The score definition
 \score {
-  <<
-    \new Staff = "P1cf394b344acc753095a4ef3f57b39a3" <<
-      \set Staff.instrumentName = "Billie Joe (Vocals)"
-      \set Staff.shortInstrumentName = "Samp"
-      \context Staff <<
-        \override Staff.BarLine.allow-span-bar = ##f
-        \mergeDifferentlyDottedOn
-        \mergeDifferentlyHeadedOn
-        \context Voice = "PartPOnecfThreeNineFourbThreeFourFouraccSevenFiveThreeZeroNineFiveaFourefThreefFiveSevenbThreeNineaThreeVoiceOne"
-        {
-          \PartPOnecfThreeNineFourbThreeFourFouraccSevenFiveThreeZeroNineFiveaFourefThreefFiveSevenbThreeNineaThreeVoiceOne
-        }
-      >>
+<<
+  \new Staff = "P1cf394b344acc753095a4ef3f57b39a3" <<
+    \set Staff.instrumentName = "Billie Joe (Vocals)"
+    \set Staff.shortInstrumentName = "Samp"
+    \context Staff <<
+      \override Staff.BarLine.allow-span-bar = ##f
+      \mergeDifferentlyDottedOn
+      \mergeDifferentlyHeadedOn
+      \context Voice = "PartPOnecfThreeNineFourbThreeFourFouraccSevenFiveThreeZeroNineFiveaFourefThreefFiveSevenbThreeNineaThreeVoiceOne"
+      {
+        \PartPOnecfThreeNineFourbThreeFourFouraccSevenFiveThreeZeroNineFiveaFourefThreefFiveSevenbThreeNineaThreeVoiceOne
+      }
     >>
-    \new Staff = "P22e5d5ef6eb164562ccda3d9e86bf1d5" <<
-      \set Staff.instrumentName = "Billie Joe (Rhythm)"
-      \set Staff.shortInstrumentName = "Ac Gtr"
-      \context Staff <<
-        \override Staff.BarLine.allow-span-bar = ##f
-        \mergeDifferentlyDottedOn
-        \mergeDifferentlyHeadedOn
-        \context Voice = "PartPTwoTwoeFivedFiveefSixebOneSixFourFiveSixTwoccdaThreedNineeEightSixbfOnedFiveVoiceOne"
-        {
-          \PartPTwoTwoeFivedFiveefSixebOneSixFourFiveSixTwoccdaThreedNineeEightSixbfOnedFiveVoiceOne
-        }
-      >>
-    >>
+  >>
+
+  \new Lyrics \lyricsto "PartPOnecfThreeNineFourbThreeFourFouraccSevenFiveThreeZeroNineFiveaFourefThreefFiveSevenbThreeNineaThreeVoiceOne" \verse
+    %\new Staff = "P22e5d5ef6eb164562ccda3d9e86bf1d5" <<
+    %  \set Staff.instrumentName = "Billie Joe (Rhythm)"
+    %  \set Staff.shortInstrumentName = "Ac Gtr"
+    %  \context Staff <<
+    %    \override Staff.BarLine.allow-span-bar = ##f
+    %    \mergeDifferentlyDottedOn
+    %    \mergeDifferentlyHeadedOn
+    %    \context Voice = "PartPTwoTwoeFivedFiveefSixebOneSixFourFiveSixTwoccdaThreedNineeEightSixbfOnedFiveVoiceOne"
+    %    {
+    %      \PartPTwoTwoeFivedFiveefSixebOneSixFourFiveSixTwoccdaThreedNineeEightSixbfOnedFiveVoiceOne
+    %    }
+    %  >>
+    %>>
     \new Staff = "P8aa3922f8e20cfb3393b3e61be8ec6af" <<
       \set Staff.instrumentName = "Celesta 1"
       \set Staff.shortInstrumentName = "Clst"
