@@ -45,10 +45,33 @@
       d1 \bar "|."
     }
 
+  
+
     % Sangtekst tilføjet under nodelinjen
     \addlyrics {
       Vo -- res klas -- se -- læ -- rer, Kaj, er ble -- vet spist.
       Vi ved ik -- ke no -- get om det helt præ -- cist.
+      Men det lan -- ge af det kor -- te
+      er, at han er ble -- vet bor -- te.
+      Det er sør -- ge -- ligt, i hvert fald for -- holds -- vist.
+    }
+
+      \new Staff \relative f' {
+      \key f \major
+      \time 4/4
+      r1 f2 f2
+      cis8 cis d d cis4 r4
+      f2 g2 
+      a8 a bes bes a4 g8 a
+      bes8 bes bes bes g e f g |
+      a a a a f d e f |
+      g g g e cis d e cis |
+      d1 \bar "|."
+    }
+
+    \addlyrics {
+      Ah Ah nam -- me -- nam -- me -- nam
+      Ah Ah nam -- me -- nam -- me -- nam
       Men det lan -- ge af det kor -- te
       er, at han er ble -- vet bor -- te.
       Det er sør -- ge -- ligt, i hvert fald for -- holds -- vist.
