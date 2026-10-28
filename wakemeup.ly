@@ -32,11 +32,7 @@ U = \tweak Stem.direction #UP \etc
 
 songChordsVerse = \chordmode {
   g1 |
-  \once \override ChordNames.ChordName.text = \markup \dir-column {
-    \italic \small "(alt. D)"
-    "Bm"
-  }
-  b1:m |e1:m |d1|c1|c1:m| g1 | g1 |
+  d1/fis |e1:m |d1|c1|c1:m| g1 | g1 |
 }
 
 songChordsBridge = \chordmode {
@@ -216,6 +212,95 @@ vocalMelody = \relative a' {
   r8 g4. r2 \bar "|."
 }
 
+keysMelodyA = {
+  g1
+  fis1
+  e1
+  d1
+  c1
+  ees1
+  g1 ~
+  g1 
+}
+
+keysMelodyB = {
+  e1
+  fis1
+  g1
+  g1
+  e1
+  fis1
+  g1
+  a1
+}
+keysMelody = \relative a' {
+  \textMark "Intro - Kun guitar"
+  R1*4
+  \textMark "+Klokkespil"
+  \keysMelodyA
+  \textMark "+Bas"
+  \keysMelodyA
+  \keysMelodyB
+  \keysMelodyA
+  \textMark "Kun guitar"
+  R1 R1
+  \textMark "+Distortion Elguitar"
+  g1 ~ g1 ~ g1 ~ g1 
+  \textMark "Alle"
+  \keysMelodyA
+  \keysMelodyA
+  \keysMelodyB
+  \keysMelodyA
+  \textMark "GUITARSOLO"
+  \keysMelodyB
+  a1 a1 a1
+  \textMark "Introstykke kun Guitar"
+  g1
+  R1
+  R1
+  R1
+  \textMark "Guitar+Klokkespil +Bas +Cello +Blæs"
+  g1
+  fis1
+  e1
+  d1 \break
+  \textMark "ALLE"
+  c1
+  ees1
+  g1 ~
+  g1 
+  \textMark "Guitar+Klokkespil +Bas +Cello +Blæs"
+  g1
+  fis1
+  e1
+  d1 \break
+  \textMark "ALLE"
+  c1
+  ees1
+  g1 ~
+  g1 
+  \textMark "OUTRO"
+  c,1 ees1 g1 ~ g1
+  c,1 ees1 g1
+}
+
+keysTXT = \lyricmode {
+  G Fis E D C EbDis G
+  G Fis E D C EbDis G
+  E Fis G G E Fis G A
+  G Fis E D C EbDis G
+  G
+  G Fis E D C EbDis G
+  G Fis E D C EbDis G
+  E Fis G G E Fis G A
+  G Fis E D C EbDis G
+  E Fis G G E Fis G A
+  A A A G
+  G Fis E D C EbDis G
+  G Fis E D 
+  C EbDis G
+  C EbDis G
+}
 % ------------------------------------------------------------------
 % 3. SLAGTØJSSTEMMER (Omdannet til drummode)
 % ------------------------------------------------------------------
@@ -316,16 +401,30 @@ drumPercBass = \drummode {
     % Tekst koblet til vokalen
     \new Lyrics \lyricsto "vocalVoice" \verse
 
-    % Samlet Trommesæt (DrumStaff) med Weinberg-notation
-    \new DrumStaff = "drumKit" \with {
-      instrumentName = "Trommesæt"
-      shortInstrumentName = "Dr."
-    } <<
-      % Fødder: Storetromme (halse ned)
-      \new DrumVoice = "feet" {
-        \drumPercBass
-      }
+    % Keys
+    \new Staff = "Keys" <<
+      \set Staff.instrumentName = "Keyboard"
+      \set Staff.shortInstrumentName = "Keys"
+      \context Staff <<
+        \override Staff.BarLine.allow-span-bar = ##f
+        \context Voice = "keysVoice" {
+          \keysMelody
+        }
+      >>
     >>
+
+    \new Lyrics \lyricsto "keysVoice" \keysTXT
+
+    % Samlet Trommesæt (DrumStaff) med Weinberg-notation
+    %\new DrumStaff = "drumKit" \with {
+    %  instrumentName = "Trommesæt"
+    %  shortInstrumentName = "Dr."
+    %} <<
+    %  % Fødder: Storetromme (halse ned)
+    %  \new DrumVoice = "feet" {
+    %    \drumPercBass
+    %  }
+    %>>
   >>
   \layout { }
 }
