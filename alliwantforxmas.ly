@@ -13,14 +13,23 @@ global = {
 }
 
 % 1. Akkorder øverst
-chordsIntro = {
-  g1 g g g
-  c1 c c:m c:m
+chordsVerse = \chordmode {
+  g1 g g g \break
+  c1 c c:m c:m \break
+  g1 g2. b4:7 e1:m e2.:m c4:m \break
+  g1 e:7 a:m7 a:m7/d
+
 }
+
+chordsBridge = \chordmode {
+  b1:7
+}
+
 chordsPart = \chordmode {
   \global
-  r1 * 4
-  \chordsIntro
+  r1 * 4 \break
+  \chordsVerse
+  
 }
 
 % 2. Melodistemme
