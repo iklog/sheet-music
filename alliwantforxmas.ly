@@ -17,19 +17,31 @@ chordsVerse = \chordmode {
   g1 g g g \break
   c1 c c:m c:m \break
   g1 g2. b4:7 e1:m e2.:m c4:m \break
-  g1 e:7 a:m7 a:m7/d
+  g1 e:7 a:m7 a:m7/d \break
+  g1 e:m c d \break
 
 }
 
 chordsBridge = \chordmode {
-  b1:7
+  b1:7 b1:7 e1:m e1:m \break
+  b1:7 b1:7 e1:m e1:m \break
+  c1:m c1:m g1 e1:7 \break
+  a1:m7 a1:m7 c1 c1 \break
+}
+
+chordsOutro = \chordmode {
+  g1 e:m c d \break
 }
 
 chordsPart = \chordmode {
   \global
   r1 * 4 \break
   \chordsVerse
-  
+  \chordsVerse
+  \chordsVerse
+  \chordsBridge
+  \chordsVerse
+  \chordsOutro
 }
 
 % 2. Melodistemme
@@ -37,24 +49,15 @@ melody = \relative c'' {
   \global
   \clef treble
   r1 * 4
-  r4 g8 a b4 g |
-  e'4 d2 r4 |
-  r4 c8 d e4 c |
-  d2. r4 |
-  
-  r4 g,8 a b4 g |
-  e'4 d2 r4 |
-  r4 c8 d e4 c |
-  d2. r4 |
-  
-  r4 b8 c d4 b |
-  g'4 e2 r4 |
-  r4 c8 d e4 c |
-  c4 b8 a g2 |
-  
-  b4. b8 c4. c8 |
-  d4 g, a b |
-  g1 |
+  g4 b d fis g fis e d %I don't want a lot for Christ -- mas
+  a' g fis g fis g e2  %There is just one thing I need
+  c4 e g a ais a g a   %I don't care a -- bout the pres -- ents
+  c, dis g a ais a g2   %Un -- der -- neath the Christ -- mas tree
+  g4 a fis g e fis dis2 %I just want you for my own
+  b'4 a g fis e fis dis2%More than you could ever now
+  d4 e g d' c1 %Make my wish come true
+  b4 a g e dis a2' b4 g1 %All I want for christmas is you
+
   \bar "|."
 }
 
@@ -64,6 +67,10 @@ words = \lyricmode {
   There is just one thing I need
   I don't care a -- bout the pres -- ents
   Un -- der -- neath the Christ -- mas tree
+  I just want you for my own
+  More than you could e -- ver now
+  Make my wish come true
+  All I want for christ -- mas is you
 }
 
 % 3. Klokkespil
