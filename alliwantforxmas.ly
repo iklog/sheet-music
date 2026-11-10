@@ -91,12 +91,19 @@ sax = \relative c'' {
   \global
   \clef treble
   r1 * 4
-  b1 b1 g1 g1
+  b1~b b~b g~g g~g
+  b1~b2. c4 b1~b2. c4
+  b1 b1 a1 a1
+
 }
 horn = \relative c'' {
   \global
   \clef treble
   r1 * 4
+  g1~g g~g e~e dis~dis
+  g1~g2. g4 g1~g2. dis4
+  g1 gis1 e1 g1
+
 
 }
 
@@ -152,16 +159,16 @@ drumPart = \drummode {
       \new Voice = "mel" \melody
     }
     \new Lyrics \lyricsto "mel" \words
-    
-    \new Staff \with {
-      instrumentName = "Bb-horn"
-      shortInstrumentName = "Bb-h"
-    } \horn
 
     \new Staff \with {
       instrumentName = "Eb Sax"
       shortInstrumentName = "Sax"
     } \sax
+
+    \new Staff \with {
+      instrumentName = "Bb-horn"
+      shortInstrumentName = "Bb-h"
+    } \horn
 
     \new Staff \with {
       instrumentName = "Klokkespil"
