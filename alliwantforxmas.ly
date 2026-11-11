@@ -57,7 +57,7 @@ melody = \relative c'' {
   b'4 a g fis e fis dis2%More than you could ever now
   d4 e g d' c1 %Make my wish come true
   b4 a g e dis a2' b4 g1 %All I want for christmas is you
-
+  r1 r1 r1
   \bar "|."
 }
 
@@ -105,8 +105,6 @@ horn = \relative c'' {
   g1~g g~g e~e dis~dis
   g1~g2. g4 g1~g2. dis4
   g1 gis1 e1 g1
-
-
 }
 
 
@@ -177,12 +175,15 @@ drumPart = \drummode {
     \new Staff \with {
       instrumentName = "Eb Sax"
       shortInstrumentName = "Sax"
-    } \sax
+    }{
+      \transpose c a,
+      \sax     
+    }
 
     \new Staff \with {
       instrumentName = "Bb-horn"
       shortInstrumentName = "Bb-h"
-    } \horn
+    } { \transpose c d \horn }
 
     \new Staff \with {
       instrumentName = "Klokkespil"
