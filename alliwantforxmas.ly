@@ -37,11 +37,11 @@ chordsPart = \chordmode {
   \global
   r1 * 4 \break
   \chordsVerse
-  \chordsVerse
-  \chordsVerse
-  \chordsBridge
-  \chordsVerse
-  \chordsOutro
+  %\chordsVerse
+  %\chordsVerse
+  %\chordsBridge
+  %\chordsVerse
+  %\chordsOutro
 }
 
 % 2. Melodistemme
@@ -78,12 +78,14 @@ glockenspiel = \relative c'' {
   \global
   \clef treble
   g4 b d fis g fis d b
-  g c d g d2
+  g c d g d1
+  %{
   r1*28
   g4, r a r fis r g e
   r4 fis4 r4 eis4 r4
   g4, r a r fis r g e
   r4 fis4 r4 eis4 r4
+  %}
 }
 
 
@@ -113,7 +115,17 @@ bassTab = \relative c, {
   \global
   \clef bass
   r1 * 4
-  g4 g8 g r g g4 |
+  g1~g1 
+  b1~b1 
+  c1~c1 
+  dis1~dis1
+  a1~a2. b4
+  e1~e2. dis4
+  d1~d2. e4
+  a1, d1
+  g1 r1 r1 r4 d8 d8 d8 d8
+       
+  %{g4, g8 g r g g4 |
   e4 e8 e r e e4 |
   c4 c8 c r c c4 |
   d4 d8 d r d d4 |
@@ -131,18 +143,20 @@ bassTab = \relative c, {
   d4. d8 e4. e8 |
   a,4. a8 d4. d8 |
   g,1 |
+  %}
 }
 
 % 5. Trommepartitur
 drumPart = \drummode {
   \global
-  r1 r1
-  \repeat unfold 7 {
+  r1 * 20
+  %{\repeat unfold 7 {
     hh4 hh8 hh hh4 hh8 hh |
     bd4 sn bd sn |
   }
   hh4 hh hh hh |
   bd1 |
+  %}
 }
 
 % Samlet partitur-struktur
